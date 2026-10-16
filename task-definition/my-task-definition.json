@@ -1,0 +1,22 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "server",
+      "image": "ubuntu",
+      "cpu": 10,
+      "memory": 10,
+      "command": ["sh", "-c", "while true; do echo running; sleep 1; done"],
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "myloggroup",
+          "awslogs-stream-prefix": "myprefix",
+          "awslogs-region": "us-east-1"
+        }
+      }
+    }
+  ],
+  "family": "myfamily"
+}

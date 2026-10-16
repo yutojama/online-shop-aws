@@ -1,0 +1,56 @@
+{
+  "family": "keycloak",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "executionRoleArn": "arn:aws:iam::000000000000:role/ecsTaskExecutionRole",
+  "cpu": "512",
+  "memory": "1024",
+  "containerDefinitions": [
+    {
+      "name": "keycloak",
+      "image": "000000000000.dkr.ecr.eu-central-1.localhost.localstack.cloud:4566/keycloak:26.7",
+      "essential": true,
+      "command": ["start-dev"],
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "KC_DB",
+          "value": "postgres"
+        },
+        {
+          "name": "KC_DB_URL",
+          "value": "jdbc:postgresql://localstack:4511/keycloak"
+        },
+        {
+          "name": "KC_HOSTNAME_STRICT",
+          "value": "false"
+        },
+        {
+          "name": "KC_HTTP_ENABLED",
+          "value": "true"
+        },
+        {
+          "name": "KC_BOOTSTRAP_ADMIN_USERNAME",
+          "value": "admin_user"
+        },
+        {
+          "name": "KC_BOOTSTRAP_ADMIN_PASSWORD",
+          "value": "password"
+        },
+        {
+          "name": "KC_DB_USERNAME",
+          "value": "admin_user"
+        },
+        {
+          "name": "KC_DB_PASSWORD",
+          "value": "password"
+        }
+      ]
+    }
+  ]
+}

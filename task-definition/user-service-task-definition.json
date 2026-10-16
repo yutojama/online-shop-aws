@@ -1,0 +1,68 @@
+{
+  "family": "user-service",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "executionRoleArn": "arn:aws:iam::000000000000:role/ecsTaskExecutionRole",
+  "cpu": "512",
+  "memory": "1024",
+  "containerDefinitions": [
+    {
+      "name": "user-service",
+      "image": "000000000000.dkr.ecr.eu-central-1.localhost.localstack.cloud:4566/user-service:1.0.0",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 4002,
+          "protocol": "tcp"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "user-service",
+          "awslogs-region": "eu-central-1",
+          "awslogs-stream-prefix": "user-service",
+          "awslogs-create-group": "true"
+        }
+      },
+      "environment": [
+        {
+          "name": "KEYCLOAK_REALM",
+          "value": "portshop-realm"
+        },
+        {
+          "name": "KEYCLOAK_CLIENT_ID",
+          "value": "portshop-admin"
+        },
+        {
+          "name": "KEYCLOAK_CLIENT_SECRET",
+          "value": "fMBKIo1lQVsIgVW0Ln8evxFgU7fGZhbEjTsuUzjDdTegbtrS1ze2U269BCA0W50D7WtXGTteID0BuokhlWFZ12"
+        },
+        {
+          "name": "KEYCLOAK_SERVER_URL",
+          "value": "http://keycloak.portshop.local:8080"
+        },
+        {
+          "name": "SPRING_DATASOURCE_PASSWORD",
+          "value": "password"
+        },
+        {
+          "name": "SPRING_DATASOURCE_URL",
+          "value": "jdbc:postgresql://localstack:4525/db"
+        },
+        {
+          "name": "SPRING_DATASOURCE_USERNAME",
+          "value": "admin_user"
+        },
+        {
+          "name": "SPRING_JPA_HIBERNATE_DDL_AUTO",
+          "value": "update"
+        },
+        {
+          "name": "SPRING_SQL_INIT_MODE",
+          "value": "never"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "InstanceType": "kafka.t3.small",
+  "ClientSubnets": [
+    "subnet-4247935c1589c175e",
+    "subnet-a13a5814d58058e7a"
+  ],
+  "SecurityGroups": [
+    "sg-d5977695e412448c7"
+  ]
+}
