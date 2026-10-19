@@ -1,0 +1,18 @@
+{
+  "Changes": [
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "keycloak.portshop.local.",
+        "Type": "A",
+        "SetIdentifier": "6ddddb33-18cc-4ee4-a25b-9bce8e2e12ba",
+        "TTL": 10,
+        "ResourceRecords": [
+          {
+            "Value": "172.19.0.4"
+          }
+        ]
+      }
+    }
+  ]
+}

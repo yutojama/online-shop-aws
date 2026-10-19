@@ -1,0 +1,4 @@
+{
+  "Comment": "Remove /be prefix",
+  "Runtime": "cloudfront-js-1.0"
+}

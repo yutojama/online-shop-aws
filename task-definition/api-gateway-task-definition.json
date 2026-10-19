@@ -80,7 +80,7 @@
         },
         {
           "name": "FRONTEND_CORS_URL",
-          "value": "http://frontend.portshop.local:8080"
+          "value": "https://f6d1c334.cloudfront.localhost.localstack.cloud"
         }
       ]
     }

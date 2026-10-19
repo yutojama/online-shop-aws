@@ -1,0 +1,7 @@
+{
+  "Name": "frontend-oac",
+  "Description": "CloudFront access to the frontend S3 bucket",
+  "SigningProtocol": "sigv4",
+  "SigningBehavior": "always",
+  "OriginAccessControlOriginType": "s3"
+}

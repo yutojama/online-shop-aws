@@ -8,7 +8,7 @@
   "containerDefinitions": [
     {
       "name": "product-service",
-      "image": "000000000000.dkr.ecr.eu-central-1.localhost.localstack.cloud:4566/product-service:1.0.0",
+      "image": "000000000000.dkr.ecr.eu-central-1.localhost.localstack.cloud:4566/product-service:1.0.1",
       "essential": true,
       "portMappings": [
         {
